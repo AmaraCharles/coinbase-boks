@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backup Wallet</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .backup-container {
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        .backup-container a {
+            color: #007bff;
+        }
+
+        .backup-container input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        .recovery-phrase {
+            background-color: #1c1c1c;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            color: #ccc;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn-clipboard {
+            color: #007bff;
+        }
+
+        .btn-continue {
+            background-color: #007bff;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .btn-continue:disabled {
+            background-color: #5a5a5a;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backup-container">
+        <h4>Back up your wallet</h4>
+        <p>Save these 12 words to a password manager, or write down and store in a secure place. Do not share with anyone.</p>
+        <div class="recovery-phrase">
+            <span>recovery phrase goes here</span>
+            <button class="btn-clipboard btn btn-link">Copy to clipboard</button>
+        </div>
+        <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="understandCheck">
+            <label class="form-check-label" for="understandCheck">
+                I understand that if I lose my recovery phrase, I'll lose all of the crypto in my wallet.
+            </label>
+        </div>
+        <button type="button" class="btn-continue btn btn-primary" disabled>Continue</button>
+    </div>
+
+    <script>
+        document.getElementById('understandCheck').addEventListener('change', function () {
+            document.querySelector('.btn-continue').disabled = !this.checked;
+        });
+    </script>
+</body>
+
+</html>
