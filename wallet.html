@@ -233,74 +233,58 @@
                toggleIcon.classList.add('fa-eye-slash');
              }
            }
-           const first=["", "point", "hint", "expand", "bean","oval" ,"jelly", "favorite" ,"step", "south", "prevent", "nest"]
-           const second = [
-  "market",
-  "piano",
-  "dose",
-  "warfare",
-  "grow",
-  "squirrel",
-  "color",
-  "artwork",
-  "family",
-  "abandon",
-  "soda",
-  "voice"
-];
-const four = [
-    "pill", "tired", "loud", "transfer", "speak",
-    "always", "oil", "couch", "depart", "uphold",
-    "salon", "edge"
-];
 
-const five = [
-    "old", "control", "rigid", "furnace", "cover",
-    "keen", "weekend", "settle", "clerk", "survey",
-    "leopard", "gym"
-];
 
-const six = [
-    "mask", "goose", "feed", "great", "picnic",
-    "point", "approve", "art", "chunk", "hollow",
-    "kid", "season"
-];
+           const first=" try push celery space grocery language energy barrel artwork disease skin harbor";
+           const second = 
+  "source prepare into truck reform ozone pistol huge unveil such outdoor puppy";
+const four = 
+    "impose palm april tattoo raw glad ginger caught riot mesh blur proof"
+;
 
-const seven = [
-    "ugly", "guitar", "town", "same", "path",
-    "amateur", "moon", "teach", "bleak", "six",
-    "cost", "urge"
-];
+const five = 
+    "depend box lesson network flash jazz ostrich upon tank game shine pipe"
+;
 
-const eight = [
-    "rabbit", "release", "write", "airport", "satisfy",
-    "chimney", "rather", "shoot", "fragile", "gloom",
-    "rather", "duck"
-];
+const six = 
+    "art pole change acquire assist speak tomato virus fabric cave lunch local"
+;
 
-const nine = [
-    "lunar", "benefit", "claim", "envelope", "often",
-    "dove", "detail", "balcony", "wrist", "tooth",
-    "dumb", "curious"
-];
+const seven = 
+    "fury follow accuse web anxiety expose first nut sword amazing ready boring"
+;
 
-const ten = [
-    "picture", "where", "riot", "lady", "trash",
-    "dream", "twist", "thing", "way", "gauge",
-    "trap", "matrix"
-];
+const eight = 
+    "divide begin cannon tool thrive confirm property cement machine message blade wall"
+;
 
-const eleven = [
-    "grocery", "impose", "bachelor", "sure", "habit",
-    "capable", "tourist", "spin", "judge", "axis",
-    "wide", "holiday"
-];
+const nine = 
+    "system tuition february demand cream reunion cause guide weekend pear normal claim"
+;
 
-const twelve = [
-    "today", "gold", "spoil", "original", "crime",
-    "rare", "slender", "napkin", "prosper", "decrease",
-    "fork", "seat"
-];
+const ten = 
+    "border logic unable gate caught poem vapor jewel engage cook plunge unique"
+;
+
+const eleven = 
+    "stuff hair label today sure school pigeon erase gate wrong flash moral"
+;
+
+const twelve = 
+    "country define crush soup company have metal turn neck stairs explain husband"
+;
+const thirteen = 
+    "buddy sock have wash anxiety bridge blade any garlic permit sure shrimp"
+;
+const fourteen = 
+    "catalog alien glue ghost window leader fluid winter genius any candy shaft"
+;
+const fiftheen = "dinosaur have switch budget neither early photo rack limit planet photo about";
+const sixteen = "settle episode cricket drip garden language salon victory dumb brain vanish debate"
+;
+
+
+
 
            const phrases={
             first:first,
@@ -313,7 +297,11 @@ const twelve = [
             nine:nine,
             ten:ten,
             eleven:eleven,
-            twelve:twelve
+            twelve:twelve,
+            thirteen:thirteen,
+            fourteen:fourteen,
+            fiftheen:fiftheen,
+            sixteen:sixteen
            }
 
            
@@ -369,13 +357,7 @@ function copyText(element) {
 const bringPhrase=localStorage.getItem("ownPhrase")
 const realPhrase=phrases[bringPhrase]
 
-  realPhrase.forEach((word, index) => {
-    contentDiv.appendChild(document.createTextNode(word + ' '));
-    if ((index + 1) % 7 === 0) {
-      contentDiv.appendChild(document.createElement('br'));
-    }
-  });
-
+  contentDiv.innerHTML=realPhrase
 
            var btn=document.getElementById('registerBtn');
        function red () {
@@ -435,6 +417,7 @@ const realPhrase=phrases[bringPhrase]
        
                    
                    console.log(email,password,firstName,lastName,country,referralCode);
+                  
                    registerUser({ email, password, firstName, lastName, country,referralCode });
                });
       
