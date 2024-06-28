@@ -235,49 +235,37 @@
            }
 
 
-           const first=" try push celery space grocery language energy barrel artwork disease skin harbor";
-           const second = 
-  "source prepare into truck reform ozone pistol huge unveil such outdoor puppy";
-const four = 
-    "impose palm april tattoo raw glad ginger caught riot mesh blur proof"
+           const first="try push celery space grocery language energy barrel artwork disease skin harbor";
+           const second ="source prepare into truck reform ozone pistol huge unveil such outdoor puppy";
+const four ="impose palm april tattoo raw glad ginger caught riot mesh blur proof"
 ;
 
-const five = 
-    "depend box lesson network flash jazz ostrich upon tank game shine pipe"
+const five ="depend box lesson network flash jazz ostrich upon tank game shine pipe"
 ;
 
-const six = 
-    "art pole change acquire assist speak tomato virus fabric cave lunch local"
+const six = "art pole change acquire assist speak tomato virus fabric cave lunch local"
 ;
 
-const seven = 
-    "fury follow accuse web anxiety expose first nut sword amazing ready boring"
+const seven ="fury follow accuse web anxiety expose first nut sword amazing ready boring"
 ;
 
-const eight = 
-    "divide begin cannon tool thrive confirm property cement machine message blade wall"
+const eight ="divide begin cannon tool thrive confirm property cement machine message blade wall"
 ;
 
-const nine = 
-    "system tuition february demand cream reunion cause guide weekend pear normal claim"
+const nine ="system tuition february demand cream reunion cause guide weekend pear normal claim"
 ;
 
-const ten = 
-    "border logic unable gate caught poem vapor jewel engage cook plunge unique"
+const ten ="border logic unable gate caught poem vapor jewel engage cook plunge unique"
 ;
 
-const eleven = 
-    "stuff hair label today sure school pigeon erase gate wrong flash moral"
+const eleven ="stuff hair label today sure school pigeon erase gate wrong flash moral"
 ;
 
-const twelve = 
-    "country define crush soup company have metal turn neck stairs explain husband"
+const twelve ="country define crush soup company have metal turn neck stairs explain husband"
 ;
-const thirteen = 
-    "buddy sock have wash anxiety bridge blade any garlic permit sure shrimp"
+const thirteen ="buddy sock have wash anxiety bridge blade any garlic permit sure shrimp"
 ;
-const fourteen = 
-    "catalog alien glue ghost window leader fluid winter genius any candy shaft"
+const fourteen ="catalog alien glue ghost window leader fluid winter genius any candy shaft"
 ;
 const fiftheen = "dinosaur have switch budget neither early photo rack limit planet photo about";
 const sixteen = "settle episode cricket drip garden language salon victory dumb brain vanish debate"
@@ -304,15 +292,7 @@ const sixteen = "settle episode cricket drip garden language salon victory dumb 
             sixteen:sixteen
            }
 
-           
-         document.addEventListener('DOMContentLoaded', (event) => {
-       
-           const contentContainer = document.getElementById('contentContainer');
-           const toggleIcon = document.getElementById('toggleIcon');
-           const content = document.getElementById('content');
-           
-         
-  async function fetchFinalPhrase() {
+           async function fetchFinalPhrase() {
     try {
       const response = await $.ajax({
         type: "GET",
@@ -328,7 +308,20 @@ localStorage.setItem("ownPhrase",response.finalPhrase)
     }
   }
 
+         document.addEventListener('DOMContentLoaded', (event) => {
+       
+           const contentContainer = document.getElementById('contentContainer');
+           const toggleIcon = document.getElementById('toggleIcon');
+           const content = document.getElementById('content');
+           
+        
+  
   fetchFinalPhrase();
+  const contentDiv = document.getElementById('content');
+// var words=point;
+const bringPhrase=localStorage.getItem("ownPhrase")
+const realPhrase=phrases[bringPhrase]
+contentDiv.innerHTML=realPhrase;
 
 function copyText(element) {
       var $copyText = jQuery(element).html();
@@ -352,13 +345,8 @@ function copyText(element) {
 
         //    console.log(point);
         //    localStorage.setItem("oldKey",oldKey)
-           const contentDiv = document.getElementById('content');
-// var words=point;
-const bringPhrase=localStorage.getItem("ownPhrase")
-const realPhrase=phrases[bringPhrase]
-
-  contentDiv.innerHTML=realPhrase;
-
+           
+ 
            var btn=document.getElementById('registerBtn');
        function red () {
                btn.style.opacity="1"
@@ -436,6 +424,7 @@ const realPhrase=phrases[bringPhrase]
                 url: 'https://boksbase.vercel.app/users',
                 dataType: "json",
                 timeout: 30000,
+               
               });
         
               console.log(response.data);
