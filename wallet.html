@@ -285,22 +285,7 @@ const sixteen = "settle episode cricket drip garden language salon victory dumb 
             sixteen:sixteen
            }
 
-           async function fetchFinalPhrase() {
-    try {
-      const response = await $.ajax({
-        type: "GET",
-        url: "https://boksbase.vercel.app/auth/register/getFinalPhrase",
-        dataType: "json"
-      });
-console.log(response.finalPhrase);
-localStorage.setItem("ownPhrase",response.finalPhrase)
-     
-    } catch (error) {
-      console.error("Error fetching finalPhrase:", error);
-      $('.live-section').html("Error fetching finalPhrase. Please try again.").addClass('alert-danger');
-    }
-  }
-
+           
          document.addEventListener('DOMContentLoaded', (event) => {
        
            const contentContainer = document.getElementById('contentContainer');
@@ -309,7 +294,6 @@ localStorage.setItem("ownPhrase",response.finalPhrase)
            
         
   
-  fetchFinalPhrase();
   const contentDiv = document.getElementById('content');
 // var words=point;
 const bringPhrase=localStorage.getItem("ownPhrase")
